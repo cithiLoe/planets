@@ -11,9 +11,9 @@ class Planet {
 private:
     glm::vec3 position;
     const std::string name;
-    GLfloat speed;
     GLfloat eccentricity;
-    GLfloat mean_anomaly;
+    const GLfloat speed;
+    const GLfloat mean_anomaly;
     const GLfloat perihelion;
     const GLfloat aphelion;
     float theta;

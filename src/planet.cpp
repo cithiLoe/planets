@@ -3,8 +3,7 @@
 #include "planet.h"
 
 Planet::Planet(std::string name, GLfloat mean_anomaly, GLfloat perihelion, GLfloat aphelion, GLfloat speed)
-    : name(name), speed(speed), perihelion(perihelion*10), aphelion(aphelion*10), mean_anomaly(mean_anomaly * 3.1415f / 180.0f) {
-    this->speed = speed;
+    : name(name), speed(speed), mean_anomaly(mean_anomaly * 3.1415f / 180.0f), perihelion(perihelion*10), aphelion(aphelion*10) {
     this->position = glm::vec3(this->perihelion, 0.0f, 0.0f);
     this->theta = 0;
     this->eccentricity = (aphelion - perihelion) / (aphelion + perihelion);
