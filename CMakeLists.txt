@@ -4,6 +4,8 @@ project (planets)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wpedantic")
 
+include_directories(include)
+
 find_package(OpenGL REQUIRED)
 
 add_executable(planets
