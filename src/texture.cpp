@@ -7,12 +7,10 @@ GLuint loadCubemap(std::vector<const GLchar*> faces) {
     GLuint textureID;
     glGenTextures(1, &textureID);
 
-    int width,height;
-    unsigned char* image;
-
     glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
     for (GLuint i = 0; i < faces.size(); ++i) {
-        image = stbi_load(faces[i], &width, &height, NULL, STBI_rgb);
+        int width, height;
+        unsigned char *image = stbi_load(faces[i], &width, &height, NULL, STBI_rgb);
         glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
         stbi_image_free(image);
     }

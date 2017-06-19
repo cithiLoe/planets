@@ -105,7 +105,7 @@ Mesh Model::processMesh(aiMesh* mesh, const aiScene* scene) {
     return Mesh(vertices, indices, textures);
 }
 
-std::vector<Texture> Model::loadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName) {
+std::vector<Texture> Model::loadMaterialTextures(aiMaterial* mat, const aiTextureType &type, const std::string &typeName) {
     std::vector<Texture> textures;
     for (GLuint i = 0; i < mat->GetTextureCount(type); ++i) {
         aiString str;
@@ -131,7 +131,7 @@ std::vector<Texture> Model::loadMaterialTextures(aiMaterial* mat, aiTextureType 
     return textures;
 }
 
-GLuint TextureFromFile(const char* path, std::string directory) {
+GLuint TextureFromFile(const char* path, const std::string &directory) {
     //Generate texture ID and load texture data
     std::string filename = std::string(path);
     filename = directory + '/' + filename;

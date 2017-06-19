@@ -19,7 +19,7 @@ private:
     float theta;
 
 public:
-    Planet(std::string name, GLfloat mean_anomaly, GLfloat perihelion, GLfloat aphelion, GLfloat speed);
+    Planet(const std::string &name, GLfloat mean_anomaly, GLfloat perihelion, GLfloat aphelion, GLfloat speed);
     glm::mat4 getModelMatrix(GLfloat dt);
 };
 
@@ -35,6 +35,6 @@ private:
     GLfloat orbit_radius;
     glm::mat4 getModelMatrix(GLfloat dt);
 public:
-    PlanetModel(std::string name, std::string model, GLfloat planet_radius, GLfloat orbit_radius, GLfloat speed);
+    PlanetModel(const std::string &name, const std::string &model, GLfloat planet_radius, GLfloat orbit_radius, GLfloat speed);
     void draw(GLfloat dt, Camera camera);
 };

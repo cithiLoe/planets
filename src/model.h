@@ -19,7 +19,7 @@
 
 #include "mesh.h"
 
-GLuint TextureFromFile(const char* path, std::string directory);
+GLuint TextureFromFile(const char* path, const std::string &directory);
 
 class Model
 {
@@ -45,5 +45,5 @@ private:
 
     // Checks all material textures of a given type and loads the textures if they're not loaded yet.
     // The required info is returned as a Texture struct.
-    std::vector<Texture> loadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName);
+    std::vector<Texture> loadMaterialTextures(aiMaterial* mat, const aiTextureType &type, const std::string &typeName);
 };

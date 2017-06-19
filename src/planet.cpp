@@ -2,7 +2,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include "planet.h"
 
-Planet::Planet(std::string name, GLfloat mean_anomaly, GLfloat perihelion, GLfloat aphelion, GLfloat speed)
+Planet::Planet(const std::string &name, GLfloat mean_anomaly, GLfloat perihelion, GLfloat aphelion, GLfloat speed)
     : name(name), speed(speed), mean_anomaly(mean_anomaly * 3.1415f / 180.0f), perihelion(perihelion*10), aphelion(aphelion*10) {
     this->position = glm::vec3(this->perihelion, 0.0f, 0.0f);
     this->theta = 0;
@@ -25,7 +25,7 @@ glm::mat4 Planet::getModelMatrix(GLfloat dt) {
     return model;
 }
 
-PlanetModel::PlanetModel(std::string name, std::string model, GLfloat planet_radius, GLfloat orbit_radius, GLfloat speed) : name(name) {
+PlanetModel::PlanetModel(const std::string &name, const std::string &model, GLfloat planet_radius, GLfloat orbit_radius, GLfloat speed) : name(name) {
     this->model = new Model((char*)model.c_str());
     this->shader = new Shader("../shaders/model.vert", "../shaders/model.frag");
     this->speed = speed;

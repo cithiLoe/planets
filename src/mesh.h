@@ -37,7 +37,7 @@ public:
 
     /*  Functions  */
     // Constructor
-    Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture> textures);
+    Mesh(const std::vector<Vertex> &vertices, const std::vector<GLuint> &indices, const std::vector<Texture> &textures);
 
     // Render the mesh
     void draw(Shader shader);
